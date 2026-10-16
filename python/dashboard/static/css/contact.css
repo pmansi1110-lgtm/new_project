@@ -1,0 +1,106 @@
+body {
+            background: #fffaf8;
+            font-family: 'Poppins', sans-serif;
+        }
+
+       /* Navbar Alignment */
+    .navbar {
+      background: #f5d5c0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+      object-fit: cover;
+    }
+
+    .navbar-brand {
+      color: #a85d3c;
+      color: #a85d3c !important;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: #6b3d2a !important;
+      font-weight: 500;
+      margin-left: 15px;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: #a85d3c !important;
+    }
+
+        .contact-section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+      text-align: center;
+      color: #a85d3c;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+        
+
+        .contact-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-box input,
+        .contact-box textarea {
+            margin-bottom: 15px;
+        }
+
+        /* footer */
+
+        footer {
+            background: #f1e0da;
+            padding: 30px;
+            color: #6b3d2a;
+        }
+        
+
+        .container h5
+        {
+            font-weight: 600;
+            margin-bottom: 15px;
+     }
+
+        .footer-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 1px solid black;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #6b3d2a;
+            /* display: block; */
+            margin-bottom: 5px;
+        }
+
+        
+        .fa-circle-arrow-right
+        {
+            font-size: 20px;
+        }
+
+        .fa-brands
+        {
+            font-size: 20px;
+        }
+
+        .footer-links a:hover {
+            color: #a85d3c;
+        }

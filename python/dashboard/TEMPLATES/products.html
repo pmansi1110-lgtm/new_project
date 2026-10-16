@@ -1,0 +1,275 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Glow - Products</title>
+
+  <link rel="stylesheet" href="{% static 'css/all.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/products.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <img src="{% static 'image/logo.jpeg' %}" class="logo" alt="Nova Glow Logo">
+        <span>Nova Glow</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav" style="margin-left: auto;">
+          <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'products' %}">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <section class="product-section">
+    <h2 class="section-title">Our Collection</h2>
+
+    <div class="container">
+      <div class="row g-4">
+       {% for product in queryset %} 
+        <div class="col-md-4 mb-4">
+          <div class="product-card p-3">
+            <img src="{{ product.image.url }}">
+            <h4 class="mt-3">{{ product.name }}</h4>
+            <p class="text-muted">{{ product.description }}</p>
+            <div class="d-flex gap-2">
+            <strike>${{ product.old_price|floatformat:2 }}</strike>
+            <h5 style="color: #a85d3c;">${{ product.new_price|floatformat:2 }}</h5>
+            </div>
+
+            <div class="button">
+            <button class="btn-buy" onclick="cart()">Add to Cart</button>
+            <button class="btn-buy" > <a href="/Detailspage.html" class="text-white text-decoration-none">View Details</a></button>
+            </div>
+
+          </div>
+        </div>
+        
+        {% endfor %}
+        <div class="col-md-4 mb-4">
+          <div class="product-card p-3">
+            <img src="{% static 'image/131af73adf3d8e878c4cee54ec6ace92.jpg' %}" class="rounded">
+            <h4 class="mt-3">Scented Candle</h4>
+            <p class="text-muted">Relaxing lavender aroma.</p>
+            <div class="d-flex gap-2">
+            <strike>$18.00</strike>
+            <h5 style="color: #a85d3c;">$12.00</h5>
+            </div>
+            <div class="button">
+            <button class="btn-buy" onclick="cart()">Add to Cart</button>
+            <button class="btn-buy" > <a href="/detailspage2.html" class="text-white text-decoration-none">View Details</a></button>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="product-card p-3">
+            <img src="{% static 'image/8250aeb414dedea23ff2d2672a5186f5.jpg' %}" class="rounded">
+            <h4 class="mt-3">Elegant Necklace</h4>
+            <p class="text-muted">Sparkling 18k gold finish.</p>
+            <div class="d-flex gap-2">
+            <strike>$50.00</strike>
+            <h5 style="color: #a85d3c;">$45.00</h5>
+            </div>
+
+            <div class="button">
+            <button class="btn-buy" onclick="cart()">Add to Cart</button>
+            <button class="btn-buy" > <a href="/detailspage3.html" class="text-white text-decoration-none">View Details</a></button>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="product-card p-3">
+            <img src="{% static 'image/e1755a777d5477bbf352f83e1767ffc6.jpg' %}" class="rounded">
+            <h4 class="mt-3">Aura Face Oil</h4>
+            <p class="text-muted">Deep hydration with rosehip.</p>
+            <div class="d-flex gap-2">
+            <strike>$33.00</strike>
+            <h5 style="color: #a85d3c;">$28.00</h5>
+            </div>
+
+            <div class="button">
+            <button class="btn-buy" onclick="cart()">Add to Cart</button>
+            <button class="btn-buy" > <a href="/detailspage4.html" class="text-white text-decoration-none">View Details</a></button>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="product-card p-3">
+            <img src="{% static 'image/4620b0c679f8bd6b92baa96481002259.jpg' %}" class="rounded">
+            <h4 class="mt-3">Vanilla Dream</h4>
+            <p class="text-muted">Warm sweet vanilla candle.</p>
+            <div class="d-flex gap-2">
+            <strike>$18.00</strike>
+            <h5 style="color: #a85d3c;">$14.00</h5>
+            </div>
+
+            <div class="button">
+            <button class="btn-buy" onclick="cart()">Add to Cart</button>
+            <button class="btn-buy" > <a href="/detailspage5.html" class="text-white text-decoration-none">View Details</a></button>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="product-card p-3">
+            <img src="{% static 'image/59d5ecf58fbc836f7dd5cae30642b85f.jpg' %}" class="rounded">
+            <h4 class="mt-3">Pearl Earrings</h4>
+            <p class="text-muted">Classic ocean-sourced pearls.</p>
+            <div class="d-flex gap-2">
+            <strike>$40.00</strike>
+            <h5 style="color: #a85d3c;">$38.00</h5>
+            </div>
+
+            <div class="button">
+            <button class="btn-buy" onclick="cart()">Add to Cart</button>
+            <button class="btn-buy" > <a href="/detailspage6.html" class="text-white text-decoration-none">View Details</a></button>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="product-card p-3">
+            <img src="{% static 'image/d6b670679e6000eb9bd2e1a21e6d243e.jpg' %}" class="rounded">
+            <h4 class="mt-3">Jade Roller</h4>
+            <p class="text-muted">Facial massage for lymphatic drainage.</p>
+            <div class="d-flex gap-2">
+            <strike>$22.00</strike>
+            <h5 style="color: #a85d3c;">$19.00</h5>
+            </div>
+
+            <div class="button">
+            <button class="btn-buy" onclick="cart()">Add to Cart</button>
+            <button class="btn-buy" > <a href="/detailspage7.html" class="text-white text-decoration-none">View Details</a></button>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="product-card p-3">
+            <img src="{% static 'image/f43c9afc07cec39621dcdf763c1e712b.jpg' %}" class="rounded">
+            <h4 class="mt-3">Bath Salts</h4>
+            <p class="text-muted">Epsom salts with jasmine oil.</p>
+            <div class="d-flex gap-2">
+            <strike>$20.00</strike>
+            <h5 style="color: #a85d3c;">$16.00</h5>
+            </div>
+
+            <div class="button">
+            <button class="btn-buy" onclick="cart()">Add to Cart</button>
+            <button class="btn-buy" > <a href="/detailspage8.html" class="text-white text-decoration-none">View Details</a></button>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="product-card p-3">
+            <img src="{% static 'image/348959fe57e0e2d9c96e19866a2884bb.jpg' %}" class="rounded">
+            <h4 class="mt-3">Golden Bracelet</h4>
+            <p class="text-muted">Minimalist daily wear jewelry.</p>
+            <div class="d-flex gap-2">
+            <strike>$38.00</strike>
+            <h5 style="color: #a85d3c;">$32.00</h5>
+            </div>
+
+            <div class="button">
+            <button class="btn-buy" onclick="cart()">Add to Cart</button>
+            <button class="btn-buy" > <a href="/detailspage9.html" class="text-white text-decoration-none">View Details</a></button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+
+  <footer>
+    <div class="container">
+      <div class="d-flex gap-4">
+        <div class="col-md-4 mb-4 text-center text-md-start">
+          <img src="{% static 'image/logo.jpeg' %}" class="footer-logo" alt="Footer Logo">
+          <h5>Nova Glow</h5>
+          <p>Premium skincare, candles, and jewelry brand focused on beauty and self-care.</p>
+        </div>
+
+        <div class="col-md-4 mb-5 footer-links">
+          <h5>Quick Links</h5>
+          <div class="d-flex">
+          <i class="fa-solid fa-circle-arrow-right mr-2"></i>
+          <a href="{% url 'home' %}">Home</a>
+          </div>
+          <div class="d-flex">
+          <i class="fa-solid fa-circle-arrow-right mr-2"></i>
+          <a href="{% url 'products' %}">Products</a>
+          </div>
+          <div class="d-flex">
+          <i class="fa-solid fa-circle-arrow-right mr-2"></i>
+          <a href="{% url 'about' %}">About</a>
+          </div>
+          <div class="d-flex">
+          <i class="fa-solid fa-circle-arrow-right mr-2"></i>
+          <a href="{% url 'contact' %}">Contact</a>
+        </div>
+        </div>
+
+
+        <div class="col-md-4 mb-4">
+          <h5>Follow Us</h5>
+          <div class="d-flex">
+          <i class="fa-brands fa-instagram mr-1"></i>
+          <p>Instagram</p>
+          </div>
+          <div class="d-flex">
+          <i class="fa-brands fa-facebook mr-1"></i>
+          <p>Facebook</p>
+          </div>
+          <div class="d-flex">
+          <i class="fa-brands fa-twitter mr-1"></i>
+          <p>Twitter</p>
+          </div>
+        </div>
+      
+      
+    </div>
+    <hr>
+      <p class="text-center mb-0">© 2026 Nova Glow. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function cart() {
+      alert("Product added to cart!");
+    }
+  </script>
+
+</body>
+
+</html>

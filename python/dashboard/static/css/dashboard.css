@@ -1,0 +1,104 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    display:flex;
+    background:#f5f1ed;
+    color:#333;
+}
+
+/* Sidebar */
+
+.sidebar{
+    width:260px;
+    height:100vh;
+    background:#3b1f0f;
+    color:white;
+    position:fixed;
+    left:0;
+    top:0;
+    padding:25px;
+}
+
+.logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+      object-fit: cover;
+    }
+
+    .navbar-brand {
+      color: #a85d3c;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+    }
+
+
+.sidebar ul{
+    list-style:none;
+}
+
+
+.sidebar ul li{
+    padding:15px;
+    margin:10px 0;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+
+.sidebar ul li:hover,
+.sidebar ul .active{
+    background:#c58b52;
+    color:white;
+}
+
+.main{
+    margin-left:260px;
+    width:calc(100% - 260px);
+    padding:25px;
+}
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+}
+
+
+.topbar h1{
+    color:#3b1f0f;
+}
+
+.btn{
+    color:white;
+    padding:10px 20px;
+    border-radius:20px;
+}
+
+/* modal form */
+
+.modal form{
+    display: block;
+    padding: 20px;
+}
+
+.modal .form-control{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+
+
+
